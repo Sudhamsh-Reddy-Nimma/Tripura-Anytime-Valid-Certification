@@ -1,0 +1,13 @@
+discovery_budget_cap,method_id,statistical_guarantee_status,graphs_G,mean_true_expected_loss,mean_approximation_ratio,mean_discovery_shots,mean_confirmation_shots,mean_total_shots,pct_candidates_eliminated,phase_a_family_cs_coverage,phase_c_cs_coverage,certification_rate,false_certifications
+1280,A_existing_full_coupled,exploratory_heuristic,50,0.258372949591929,0.8507312702946106,1187.84,1633.28,2821.12,12.0,1.0,1.0,0.54,0
+1280,B_fresh_adaptive_simplex,exploratory_heuristic,50,0.26136449727126987,0.8472944399633413,1187.84,1607.68,2795.52,13.0,1.0,1.0,0.48,0
+1280,C1_corrected_guaranteed,guaranteed_simultaneous_fwer,50,0.26100543182219504,0.8477253185022313,1233.92,1653.76,2887.68,9.8,1.0,1.0,0.46,0
+2560,A_existing_full_coupled,exploratory_heuristic,50,0.25822065975707714,0.8509274595472545,2088.96,1566.72,3655.68,21.37142857142857,1.0,1.0,0.54,0
+2560,B_fresh_adaptive_simplex,exploratory_heuristic,50,0.2597714013662319,0.8491437820662804,2101.12,1607.68,3708.8,21.485714285714284,1.0,1.0,0.54,0
+2560,C1_corrected_guaranteed,guaranteed_simultaneous_fwer,50,0.2600286328903967,0.8488774100982681,2307.84,1756.16,4064.0,14.4,1.0,1.0,0.5,0
+3840,A_existing_full_coupled,exploratory_heuristic,50,0.2584792436703029,0.850585186023413,3004.16,1443.84,4448.0,24.346031746031745,1.0,1.0,0.58,0
+3840,B_fresh_adaptive_simplex,exploratory_heuristic,50,0.25914741539401864,0.8498124239810056,2965.76,1643.52,4609.28,24.901587301587302,1.0,1.0,0.52,0
+3840,C1_corrected_guaranteed,guaranteed_simultaneous_fwer,50,0.25890445935306144,0.8500864756348241,3136.0,1623.04,4759.04,17.4,1.0,1.0,0.56,0
+5120,A_existing_full_coupled,exploratory_heuristic,50,0.259252634891769,0.8496987247390326,3554.56,1320.96,4875.52,38.028571428571425,1.0,1.0,0.6,0
+5120,B_fresh_adaptive_simplex,exploratory_heuristic,50,0.25995229180140933,0.8488860218861799,3452.8,1464.32,4917.12,38.82857142857143,1.0,1.0,0.52,0
+5120,C1_corrected_guaranteed,guaranteed_simultaneous_fwer,50,0.2595754658322044,0.849332334995812,3810.56,1536.0,5346.56,22.685714285714283,1.0,1.0,0.52,0

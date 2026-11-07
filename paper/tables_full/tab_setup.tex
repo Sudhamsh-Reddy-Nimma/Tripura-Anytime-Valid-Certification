@@ -1,0 +1,26 @@
+\begin{table*}[htbp]
+\caption{Experimental setup, benchmark graph populations, and frozen protocol hyperparameters for Stage~2 ($G=100$) and Stage~3 Corrected ($G=500$). All values are extracted programmatically from \texttt{configs/stage2.yaml}, \texttt{resolved\_stage3\_corrected\_config.json}, and the raw graph registries.}
+\label{tab:setup}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{4.4cm} p{5.6cm} p{6.8cm}@{}}
+\toprule
+Parameter / Protocol Component & Stage~2 Selection-Bias Benchmark & Stage~3 End-to-End Certification Benchmark \\
+\midrule
+Graph family \& edge weights & Connected non-isomorphic 3-regular, unweighted ($w_e=1$) & Connected non-isomorphic 3-regular, unweighted ($w_e=1$) \\
+Graph ensemble size $G$ & $G=100$ ($n=12$: 50; $n=14$: 50; disjoint from Stage~1) & $G=500$ ($n=12$: 80; $n=14$: 420; plus 10 pilot graphs) \\
+QAOA ansatz depth \& initialization & Depth $p=2$ ($d=4$); Wurtz--Love 3-regular warm start & Depth $p=2$ ($d=4$); Wurtz--Love 3-regular warm start \\
+Warm-start uniform jitter half-width & $\pm 0.05$ rad ($3$ seed repetitions per graph) & $\pm 0.07$ rad ($1$ canonical trajectory per graph) \\
+Classical discovery optimizer & SciPy COBYLA ($\rho_0 = 0.20$, $\mathrm{tol} = 10^{-6}$) & Adaptive COBYLA ($\rho_0 = 0.10$, $\mathrm{tol} = 10^{-4}$) \\
+Max candidates $K_{\max}$ & Checkpoints $K \in \{1, 25, 50, 100\}$ ($K_{\max}=100$) & Modes U/H/C: $K_{\max}=10$; Standard EB ablations: $K_{\max}=16$ \\
+Phase~A initial \& pilot shots & Fixed per-candidate $B \in \{256, 512, 1024, 2048\}$ & Modes U/H/C: $B_{\mathrm{simplex}}=256$, $B_{\mathrm{pilot}}=128$; Standard EB: $B_{\mathrm{pilot}}=64$ \\
+Phase~A racing batch \& budget cap & Full prefix evaluation ($M_{\mathrm{disc}} = B \times K$) & Batch $b = 32$ shots; discovery cap $B_{\mathrm{disc}} = 2560$ shots \\
+Optimality tolerance \& $\alpha_{\mathrm{disc}}$ & $\alpha = 0.05$ (in-sample vs.\ fresh confirmation) & $\epsilon_{\mathrm{best}} = 0.008$, $\alpha_{\mathrm{disc}} = 0.05$ \\
+Phase~C confirmation budget \& batch & Fixed fresh confirmation $B_{\mathrm{conf}} = 4096$ shots & Cap $B_{\mathrm{conf}} = 4096$ shots; default batch $256$ (tested: $128, 256, 512$) \\
+Phase~C error budget $\alpha_{\mathrm{conf}}$ & One-sided $\alpha_{\mathrm{conf}} = 0.05$ & $\alpha_{\mathrm{conf}} = 0.05$ (calibrated across $\alpha \in \{0.01, \dots, 0.05\}$; $90\%$ upper split) \\
+Confidence sequence engines & Naive EB, Bonferroni EB, Hoeffding, Student-$t$ & Modes U/H/C: WSR aGRAPA betting; Standard: Howard Gamma-Exp.\ EB ($m=5.0$) \\
+Frozen target loss thresholds $\tau_n$ & $\tau_{12} = 0.261891$, $\tau_{14} = 0.268661$ & $\tau_{12} = 0.261891$, $\tau_{14} = 0.268661$ \\
+Master seeds \& config SHA-256 & Seed `20261102` (Stage~1 ref.\ hash `fe2badd25a7ce863`) & Seed `20261103`, pilot `20269999`; SHA-256 `9172501cc795dbbb` \\
+\bottomrule
+\end{tabular}
+\end{table*}

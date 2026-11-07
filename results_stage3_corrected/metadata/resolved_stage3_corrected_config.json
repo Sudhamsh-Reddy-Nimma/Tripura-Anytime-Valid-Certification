@@ -1,0 +1,125 @@
+{
+  "config_file": "configs/stage3_corrected.yaml",
+  "config_sha256_full": "9172501cc795dbbba16b0180315c6d2cc249f34d57cd6bf9f030cd9f71ddb119",
+  "config_sha256_prefix": "9172501cc795dbbb",
+  "resolved_configuration": {
+    "campaign_id": "EXP_AMFS2_STAGE3_CORRECTED_AND_SOTA",
+    "protocol_version": "3.2.0-sota",
+    "master_seed": 20261103,
+    "pilot_stage_b_seed": 20269999,
+    "benchmark": {
+      "problem": "QAOA_MaxCut_Unweighted_3Regular",
+      "graph_sizes": [
+        12,
+        14
+      ],
+      "independent_graphs_n12": 80,
+      "independent_graphs_n14": 420,
+      "total_independent_graphs": 500,
+      "pilot_graphs_n12": 5,
+      "pilot_graphs_n14": 5,
+      "qaoa_depth_p": 2,
+      "optimizer": "COBYLA",
+      "warm_start": "wurtz_love_3regular_jitter",
+      "jitter_half_width": 0.07,
+      "rhobeg": 0.1,
+      "tol": 0.0001,
+      "frozen_thresholds": {
+        "12": 0.2618910742981325,
+        "14": 0.26866083912936534
+      }
+    },
+    "phase_a_discovery": {
+      "pilot_sizes_tested": [
+        32,
+        64,
+        128
+      ],
+      "pilot_shots": 64,
+      "sota_simplex_anchor_shots": 256,
+      "sota_trial_pilot_shots": 128,
+      "sota_max_candidates": 10,
+      "batch_shots": 32,
+      "M_discovery_max": 2560,
+      "max_candidates": 16,
+      "fixed_pool_candidates": 12,
+      "epsilon_best": 0.008,
+      "alpha_discovery": 0.05,
+      "cs_method": "howard_gamma_exponential_eb",
+      "sota_cs_method": "wsr_agrapa_betting",
+      "m_intrinsic": 5.0,
+      "enable_holm_step_down_in_sota": true,
+      "enable_pairwise_betting_in_sota": true,
+      "coupling_modes_tested": [
+        "none",
+        "simplex_only",
+        "full"
+      ],
+      "comparison_cs_methods": [
+        "wsr_agrapa_betting",
+        "howard_gamma_exponential_eb",
+        "howard_stitched_eb",
+        "howard_normal_mixture_hoeffding",
+        "howard_empirical_normal_mixture"
+      ],
+      "allocation_methods": [
+        "uniform",
+        "variance_only",
+        "gap_only",
+        "variance_plus_gap",
+        "ugape_eb",
+        "top_two_challenger",
+        "top_three"
+      ],
+      "elimination_modes": [
+        "none",
+        "best_candidate_only",
+        "target_rejection_only",
+        "combined"
+      ]
+    },
+    "phase_c_confirmation": {
+      "primary_cs_method": "howard_gamma_exponential_eb",
+      "sota_cs_method": "wsr_agrapa_betting",
+      "sota_alpha_upper_fraction": 0.9,
+      "m_intrinsic": 5.0,
+      "comparison_cs_methods": [
+        "wsr_agrapa_betting",
+        "howard_gamma_exponential_eb",
+        "howard_stitched_eb",
+        "howard_normal_mixture_hoeffding",
+        "howard_empirical_normal_mixture"
+      ],
+      "batch_sizes_tested": [
+        128,
+        256,
+        512
+      ],
+      "default_batch_size": 256,
+      "max_confirmation_shots": 4096,
+      "alpha_levels": [
+        0.01,
+        0.02,
+        0.03,
+        0.04,
+        0.05
+      ],
+      "alpha_confirmation": 0.05,
+      "multi_attempt_max": 2,
+      "multi_attempt_spending": "geometric_80_20"
+    },
+    "reference_baselines": {
+      "stage2_fixed_budget": {
+        "discovery_shots": 4096,
+        "confirmation_shots": 4096,
+        "total_shots": 8192,
+        "budget_comparison_class": "different_budget_reference"
+      },
+      "warm_start_no_local_search": {
+        "discovery_shots": 256,
+        "max_confirmation_shots": 4096,
+        "budget_comparison_class": "different_budget_reference"
+      }
+    }
+  }
+}

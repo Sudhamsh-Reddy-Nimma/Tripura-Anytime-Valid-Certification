@@ -1,0 +1,58 @@
+stage2:
+  project_name: "AMFS_2.0_Stage_2_Publication_Study"
+  protocol_version: "2.0.0-stage2-frozen"
+  master_seed: 20261102
+  stage1_reference_seed: 20261101
+  stage1_configuration_hash: "fe2badd25a7ce863"
+  graph_population:
+    family: "connected_random_3_regular_non_isomorphic"
+    disjoint_from_stage1: true
+    sizes:
+      12: 50
+      14: 50
+    total_graphs: 100
+  qaoa:
+    primary_depth_p: 2
+    initialization: "wurtz_love_3regular_jitter"
+    wurtz_love_angles_p2:
+      gamma: [0.488, 0.898]
+      beta: [0.555, 0.293]
+    jitter_half_width: 0.05
+    optimizer: "SciPy_COBYLA"
+    optimizer_settings:
+      rhobeg: 0.2
+      tol: 1.0e-6
+      maxiter: 100
+      enforce_prefix_completion: true
+  factorial_design:
+    discovery_shot_budgets_B: [256, 512, 1024, 2048]
+    candidate_checkpoints_K: [1, 25, 50, 100]
+    primary_checkpoint_K: 100
+    secondary_checkpoints_K: [1, 25, 50]
+    optimizer_seed_repetitions: 3
+    total_trajectories: 1200
+    max_evaluations_per_trajectory: 100
+    fixed_total_budget_comparison:
+      target_discovery_shots: 25600
+      matched_pairs:
+        - {B: 256, K: 100, M_discovery: 25600}
+        - {B: 512, K: 50, M_discovery: 25600}
+        - {B: 1024, K: 25, M_discovery: 25600}
+  frozen_thresholds:
+    12: 0.2618910742981325
+    14: 0.26866083912936534
+  certification:
+    significance_level_alpha: 0.05
+    in_sample_methods:
+      - "naive_eb"
+      - "bonferroni_eb"
+      - "hoeffding"
+      - "student_t"
+    independent_confirmation:
+      confirmation_shot_budget_B_confirm: 4096
+      primary_method: "naive_eb"
+      comparison_methods: ["naive_eb", "hoeffding", "student_t"]
+  statistical_analysis:
+    primary_sampling_unit: "graph_id"
+    bootstrap_resamples: 10000
+    confidence_level: 0.95

@@ -1,0 +1,4 @@
+method_id,adaptive_arm_cs_coverage,coverage_cp_lower,coverage_cp_upper,mean_conditional_shift,sd_conditional_shift
+proposed_sota_uncoupled,1.0,0.9926493899480923,1.0,0.0008119169082552746,0.009047742057252083
+proposed_sota_hybrid_simplex,1.0,0.9926493899480923,1.0,0.0005526892688193533,0.009463343272917583
+proposed_sota_full_coupled,1.0,0.9926493899480923,1.0,-0.018240739512561794,0.00485009742688946

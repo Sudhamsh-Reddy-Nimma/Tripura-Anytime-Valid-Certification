@@ -1,0 +1,17 @@
+\begin{table*}[htbp]
+\caption{Experimental modes in the Stage~3 benchmark ($G=500$ graphs, QAOA depth $p=2$, initial simplex size $d+1=2p+1=5$) and their formal statistical guarantees. Verified against \texttt{optimization/adaptive\_cobyla.py} and Remark~2.4 / Theorems~3.6 and~3.8. Per-arm confidence sequence (CS) validity requires predictable parameter fixing $\mathbb{E}[X_n \mid \mathcal{F}_{n-1}] = \mu(\bm{\theta}_{A_n})$ (Assumption~2.3). Phase~C Type-I false-certification control ($\Pr(D=\mathrm{CERTIFIED},\, \mu(\hat{\bm{\theta}}) > \tau) \le \alpha_{\mathrm{conf}} = 0.05$) holds unconditionally across all modes via candidate freezing $\hat{\bm{\theta}} \in \mathcal{F}_{\mathrm{disc}}$.}
+\label{tab:modes}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{2.6cm} p{4.4cm} p{4.1cm} p{3.2cm} p{2.6cm}@{}}
+\toprule
+Mode & Phase~A RNG regime & Phase~A statistical guarantee & Phase~C guarantee & Manuscript role \\
+\midrule
+Mode~U & Independent random streams for all candidates ($k \ge 1$) and all racing batches (\texttt{none}) & Per-arm CS guaranteed (Assump.~2.3); adaptive-leader step-down empirical\textsuperscript{a} & Guaranteed ($\le \alpha_{\mathrm{conf}}$, Thm.~3.8) & Uncoupled hardware baseline \\
+\textbf{Mode~H (flagship)} & Common random numbers (CRN, $\mathrm{offset}=0$) on $d+1=5$ predetermined initial simplex vertices ($\bm{\theta}_k \in \mathcal{F}_0$) only; fresh independent streams on all adaptive COBYLA proposals ($k > 5$) and racing batches (\texttt{simplex\_only}) & Per-arm CS guaranteed (Rem.~2.4); adaptive-leader step-down empirical\textsuperscript{a} & Guaranteed ($\le \alpha_{\mathrm{conf}}$, Thm.~3.8) & \textbf{Flagship proposed method} \\
+Mode~C (coupled ablation) & Reuses common uniform random sequence from $\mathrm{offset}=\mathrm{cur\_arm\_shots}$ across all initial and adaptively generated candidates (\texttt{full}) & Not guaranteed (empirical; adaptive CRN reuse violates $\mathbb{E}[X_n \mid \mathcal{F}_{n-1}] = \mu(\bm{\theta}_{A_n})$) & Guaranteed ($\le \alpha_{\mathrm{conf}}$, Thm.~3.8) & Variance-reduction sensitivity ablation \\
+\bottomrule
+\end{tabular}
+\vspace{0.3em}
+\par\noindent\footnotesize\textsuperscript{a}In the 500-graph SOTA runs, Modes~U and~H enable adaptive-leader Holm step-down and pairwise difference betting during Phase~A racing; strict simultaneous FWER control ($\le \alpha_{\mathrm{disc}}$) without adaptive-leader switching is verified in the pre-allocated schedule variants (\texttt{C1}/\texttt{C2} and Standard EB; Table~S6).
+\end{table*}

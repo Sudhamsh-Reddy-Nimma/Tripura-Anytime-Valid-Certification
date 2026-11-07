@@ -1,0 +1,22 @@
+\begin{table*}[htbp]
+\caption{Phase~C significance-level ($\alpha_{\mathrm{conf}}$) calibration across $G=500$ graphs (\texttt{stage3\_corrected\_alpha\_calibration\_summary.csv}). Evaluates false-certification rates, one-sided $95\%$ Clopper--Pearson upper bounds (UB), decision rates, empirical CS coverage (with two-sided $95\%$ CP intervals), and mean confirmation shots across $\alpha_{\mathrm{conf}} \in \{0.01, 0.02, 0.03, 0.04, 0.05\}$ for both sequential ($b_{\mathrm{conf}}=256$) and fixed ($B_{\mathrm{conf}}=4096$) confirmation.}
+\label{tab:alpha_calibration}
+\centering
+\footnotesize
+\begin{tabular}{@{}c l c c c c c r@{}}
+\toprule
+$\alpha_{\mathrm{conf}}$ ($1-\alpha_{\mathrm{conf}}$) & Confirmation protocol & False-cert.\ rate [95\% CP UB] & Cert.\ rate & Rej.\ rate & Inc.\ rate & Empirical coverage [95\% CP] & Mean conf.\ shots \\
+\midrule
+0.01 (0.99) & Fixed ($B_{\mathrm{conf}}=4096$) & 0/500 (0.000) [UB: 0.0060] & 0.498 & 0.244 & 0.258 & 1.000 [0.993, 1.000] & 4096.0 \\
+0.01 (0.99) & Sequential ($b_{\mathrm{conf}}=256$) & 0/500 (0.000) [UB: 0.0060] & 0.510 & 0.250 & 0.240 & 1.000 [0.993, 1.000] & 1975.3 \\
+0.02 (0.98) & Fixed ($B_{\mathrm{conf}}=4096$) & 0/500 (0.000) [UB: 0.0060] & 0.508 & 0.252 & 0.240 & 1.000 [0.993, 1.000] & 4096.0 \\
+0.02 (0.98) & Sequential ($b_{\mathrm{conf}}=256$) & 0/500 (0.000) [UB: 0.0060] & 0.526 & 0.254 & 0.220 & 1.000 [0.993, 1.000] & 1907.7 \\
+0.03 (0.97) & Fixed ($B_{\mathrm{conf}}=4096$) & 0/500 (0.000) [UB: 0.0060] & 0.522 & 0.258 & 0.220 & 1.000 [0.993, 1.000] & 4096.0 \\
+0.03 (0.97) & Sequential ($b_{\mathrm{conf}}=256$) & 0/500 (0.000) [UB: 0.0060] & 0.538 & 0.266 & 0.196 & 1.000 [0.993, 1.000] & 1787.4 \\
+0.04 (0.96) & Fixed ($B_{\mathrm{conf}}=4096$) & 0/500 (0.000) [UB: 0.0060] & 0.534 & 0.260 & 0.206 & 1.000 [0.993, 1.000] & 4096.0 \\
+0.04 (0.96) & Sequential ($b_{\mathrm{conf}}=256$) & 0/500 (0.000) [UB: 0.0060] & 0.526 & 0.256 & 0.218 & 1.000 [0.993, 1.000] & 1760.3 \\
+0.05 (0.95) & Fixed ($B_{\mathrm{conf}}=4096$) & 0/500 (0.000) [UB: 0.0060] & 0.520 & 0.264 & 0.216 & 1.000 [0.993, 1.000] & 4096.0 \\
+0.05 (0.95) & Sequential ($b_{\mathrm{conf}}=256$) & 0/500 (0.000) [UB: 0.0060] & 0.540 & 0.264 & 0.196 & 1.000 [0.993, 1.000] & 1682.4 \\
+\bottomrule
+\end{tabular}
+\end{table*}

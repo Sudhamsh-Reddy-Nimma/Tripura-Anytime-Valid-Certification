@@ -1,0 +1,6 @@
+confirmation_type,alpha,nominal_confidence,independent_attempts_G,false_certifications,observed_false_certification_rate,clopper_pearson_95_lower_bound,clopper_pearson_95_upper_bound,cs_coverage,cs_coverage_ci_lower,cs_coverage_ci_upper
+boundary_stress_mu_eq_tau_plus_1e-4,0.01,0.99,500,0,0.0,0.0,0.007350610051907784,1.0,0.9926493899480923,1.0
+boundary_stress_mu_eq_tau_plus_1e-4,0.02,0.98,500,0,0.0,0.0,0.007350610051907784,1.0,0.9926493899480923,1.0
+boundary_stress_mu_eq_tau_plus_1e-4,0.03,0.97,500,1,0.002,5.0634334007415215e-05,0.011092476898968787,0.998,0.9889075231010312,0.9999493656659926
+boundary_stress_mu_eq_tau_plus_1e-4,0.04,0.96,500,0,0.0,0.0,0.007350610051907784,1.0,0.9926493899480923,1.0
+boundary_stress_mu_eq_tau_plus_1e-4,0.05,0.95,500,0,0.0,0.0,0.007350610051907784,1.0,0.9926493899480923,1.0

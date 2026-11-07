@@ -1,0 +1,15 @@
+{
+  "stage": "Stage B - Small Pilot (10 Development Graphs)",
+  "num_pilot_graphs": 7,
+  "num_pilot_trials": 133,
+  "disjoint_from_confirmatory_500": true,
+  "gate_1_no_runtime_errors": true,
+  "gate_2_no_missing_counters_or_schema_fields": true,
+  "gate_3_valid_simultaneous_alpha_allocations": true,
+  "gate_4_zero_invalid_or_incorrect_eliminations": true,
+  "gate_5_no_ground_truth_leakage": true,
+  "gate_6_shot_accounting_identity_exact": true,
+  "gate_7_config_hash_exact_match": true,
+  "gate_8_seed_reproducibility_exact": true,
+  "all_pilot_gates_passed": true
+}

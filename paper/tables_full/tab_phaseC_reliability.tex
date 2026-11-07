@@ -1,0 +1,18 @@
+\begin{table*}[htbp]
+\caption{Phase~C certification reliability and error decomposition across $G=500$ graphs (\texttt{stage3\_corrected\_e2e\_summary.csv} and \texttt{raw/stage3\_corrected\_e2e\_runs.csv}, $\alpha_{\mathrm{conf}}=0.05$). ``Graphs at risk'' ($G_{\mathrm{risk}}$) counts trajectories where the frozen discovery winner $\hat{\bm{\theta}}$ is genuinely infeasible ($\mu(\hat{\bm{\theta}}) > \tau_n$). For false-certification rate, both the unconditional $95\%$ Clopper--Pearson upper bound over $G=500$ and the conditional upper bound over $G_{\mathrm{risk}}$ are reported ($\mathrm{UB}:\; \mathrm{uncond.} / \mathrm{at\text{-}risk}$).}
+\label{tab:phaseC_reliability}
+\centering
+\scriptsize
+\begin{tabular}{@{}l c c c c c c c c c@{}}
+\toprule
+Method / Mode & Graphs at risk $G_{\mathrm{risk}}/G$ & False certs.\ & False-cert.\ rate [95\% CP UB] & CS coverage & Cert.\ rate & Power $\mid$ feasible & Target-rej.\ rate & Inconclusive rate & Incorrect-elim.\ rate \\
+\midrule
+\textbf{Mode H (flagship)} & 150/500 (0.300) & 0 & 0.000 [UB: 0.0060 / 0.0198] & 0.998 & 0.610 & 0.871 & 0.224 & 0.166 & 0.000 \\
+Mode U & 157/500 (0.314) & 0 & 0.000 [UB: 0.0060 / 0.0189] & 1.000 & 0.580 & 0.845 & 0.244 & 0.176 & 0.000 \\
+Mode C (coupled ablation) & 128/500 (0.256) & 0 & 0.000 [UB: 0.0060 / 0.0231] & 1.000 & \textbf{0.664} & \textbf{0.892} & 0.216 & 0.120 & 0.000 \\
+Uniform + sequential & 174/500 (0.348) & 0 & 0.000 [UB: 0.0060 / 0.0171] & 1.000 & 0.536 & 0.822 & 0.250 & 0.214 & 0.000 \\
+Uniform + fixed-4096 & 174/500 (0.348) & 0 & 0.000 [UB: 0.0060 / 0.0171] & 1.000 & 0.532 & 0.816 & 0.258 & 0.210 & 0.000 \\
+Adaptive + fixed-4096 & 179/500 (0.358) & 0 & 0.000 [UB: 0.0060 / 0.0166] & 1.000 & 0.532 & 0.829 & 0.268 & 0.200 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table*}

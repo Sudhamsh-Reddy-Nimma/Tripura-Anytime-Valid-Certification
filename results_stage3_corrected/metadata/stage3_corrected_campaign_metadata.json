@@ -1,0 +1,17 @@
+{
+  "campaign_id": "EXP_AMFS2_STAGE3_CORRECTED_AND_SOTA",
+  "protocol_version": "3.2.0-sota",
+  "python_version": "3.11.2",
+  "numpy_version": "2.1.3",
+  "scipy_version": "1.15.2",
+  "pandas_version": "2.2.3",
+  "config_file": "configs/stage3_corrected.yaml",
+  "config_file_sha256_prefix": "9172501cc795dbbb",
+  "config_file_sha256_full": "9172501cc795dbbba16b0180315c6d2cc249f34d57cd6bf9f030cd9f71ddb119",
+  "independent_graphs_total": 500,
+  "independent_graphs_n12": 80,
+  "independent_graphs_n14": 420,
+  "pilot_stage_b_graphs": 10,
+  "pilot_stage_b_all_gates_passed": true,
+  "total_wall_clock_seconds": 829.4486514660002
+}

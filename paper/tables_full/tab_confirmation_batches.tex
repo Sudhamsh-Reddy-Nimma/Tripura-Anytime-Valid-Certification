@@ -1,0 +1,19 @@
+\begin{table*}[htbp]
+\caption{Phase~C sequential confirmation batch-size and CS-engine evaluation across $G=500$ graphs (Experiment~11, $\alpha_{\mathrm{conf}}=0.05$, cap $B_{\mathrm{conf}}=4096$; \texttt{stage3\_corrected\_exp11\_confirmation\_batches\_summary.csv}). Compares fixed-4096 single-look confirmation against Howard Gamma-Exponential EB and WSR asymmetric betting sequential confirmation at batch increments $b_{\mathrm{conf}} \in \{128, 256, 512\}$. Decision breakdown reports Certified / Target-Rejected / Inconclusive percentages.}
+\label{tab:confirmation_batches}
+\centering
+\footnotesize
+\begin{tabular}{@{}l c r c c@{}}
+\toprule
+Confirmation protocol \& batch size $b_{\mathrm{conf}}$ & Confirmation shots ($\pm$ SE) & Reduction vs.\ 4096 & False certs.\ [95\% CP UB] & Decision breakdown (Cert.\ / Rej.\ / Inc.) \\
+\midrule
+Fixed-horizon confirmation ($B_{\mathrm{conf}}=4096$, single look) & 4096.0 & 0.0\% & 0/500 [UB: 0.0060] & 51.4\% / 26.2\% / 22.4\% \\
+Howard Gamma-Exp.\ EB sequential ($b_{\mathrm{conf}}=128$) & $1630.0 \pm 64.5$ & 60.2\% & 0/500 [UB: 0.0060] & 54.8\% / 26.4\% / 18.8\% \\
+Howard Gamma-Exp.\ EB sequential ($b_{\mathrm{conf}}=256$) & $1713.7 \pm 65.2$ & 58.2\% & 0/500 [UB: 0.0060] & 53.4\% / 26.2\% / 20.4\% \\
+Howard Gamma-Exp.\ EB sequential ($b_{\mathrm{conf}}=512$) & $1782.8 \pm 62.8$ & 56.5\% & 0/500 [UB: 0.0060] & 53.2\% / 26.2\% / 20.6\% \\
+\textbf{WSR asymmetric betting sequential ($b_{\mathrm{conf}}=128$)} & $1147.6 \pm 64.2$ & 72.0\% & 0/500 [UB: 0.0060] & 62.0\% / 22.0\% / 16.0\% \\
+\textbf{WSR asymmetric betting sequential ($b_{\mathrm{conf}}=256$, Mode~H default)} & $1227.3 \pm 62.3$ & 70.0\% & 0/500 [UB: 0.0060] & 61.4\% / 23.4\% / 15.2\% \\
+WSR asymmetric betting sequential ($b_{\mathrm{conf}}=512$) & $1372.2 \pm 60.8$ & 66.5\% & 0/500 [UB: 0.0060] & 62.0\% / 22.4\% / 15.6\% \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,30 @@
+\begin{table*}[htbp]
+\caption{Paired hypothesis tests across $G=500$ graphs (\texttt{raw/stage3\_corrected\_e2e\_runs.csv}, paired by \texttt{graph\_id}) comparing Modes~H, U, and~C against matched-budget baselines and against each other. Separate Holm--Bonferroni multiplicity adjustments ($p_{\mathrm{Holm}}$) are applied within the Shot-Cost family ($\Delta N_{\mathrm{total}} = N_A - N_B$; negative means Method~$A$ uses fewer shots) and the Solution-Quality family ($\Delta \mu(\hat{\bm{\theta}}) = \mu_A - \mu_B$; negative means Method~$A$ achieves lower true expected loss). Note: \texttt{Uniform + fixed-4096} and \texttt{Uniform + sequential} share identical Phase~A discovery trajectories and therefore have identical selected parameters $\hat{\bm{\theta}}$.}
+\label{tab:paired_tests}
+\centering
+\scriptsize
+\begin{tabular}{@{}l c c c c c c l@{}}
+\toprule
+Paired comparison ($A$ vs.\ $B$) & Paired diff.\ ($\pm$ SE) & $95\%$ paired CI & Cohen's $d_z$ & Paired $t$ $p$-val & Wilcoxon $p$-val & Holm $p_{\mathrm{Holm}}$ & Statistical decision ($\alpha=0.05$) \\
+\midrule
+\multicolumn{8}{@{}l}{\textit{Family 1: Total Quantum Measurement Expenditure $\Delta N_{\mathrm{total}} = N_A - N_B$ (shots; $m=9$ tests)}} \\
+Mode H (flagship) vs.\ Uniform + fixed-4096 & $-3457.5 \pm 86.8$ & $[-3627.5,\, -3287.4]$ & $-1.78$ & $3.61\times 10^{-157}$ & $4.96\times 10^{-70}$ & $2.89\times 10^{-156}$ & Significant ($A < B$) \\
+Mode H (flagship) vs.\ Uniform + sequential & $-1095.1 \pm 67.5$ & $[-1227.4,\, -962.8]$ & $-0.73$ & $7.58\times 10^{-48}$ & $6.98\times 10^{-44}$ & $3.03\times 10^{-47}$ & Significant ($A < B$) \\
+Mode H (flagship) vs.\ Adaptive + fixed-4096 & $-3456.3 \pm 86.7$ & $[-3626.2,\, -3286.3]$ & $-1.78$ & $3.61\times 10^{-157}$ & $4.99\times 10^{-70}$ & $2.89\times 10^{-156}$ & Significant ($A < B$) \\
+Mode U vs.\ Uniform + fixed-4096 & $-3324.5 \pm 89.2$ & $[-3499.2,\, -3149.7]$ & $-1.67$ & $2.20\times 10^{-146}$ & $1.45\times 10^{-69}$ & $1.32\times 10^{-145}$ & Significant ($A < B$) \\
+Mode U vs.\ Uniform + sequential & $-962.1 \pm 66.0$ & $[-1091.5,\, -832.8]$ & $-0.65$ & $2.32\times 10^{-40}$ & $2.68\times 10^{-39}$ & $6.95\times 10^{-40}$ & Significant ($A < B$) \\
+Mode C (coupled ablation) vs.\ Uniform + fixed-4096 & $-3591.4 \pm 79.3$ & $[-3746.7,\, -3436.0]$ & $-2.03$ & $5.91\times 10^{-179}$ & $5.19\times 10^{-74}$ & $5.32\times 10^{-178}$ & Significant ($A < B$) \\
+Mode C (coupled ablation) vs.\ Uniform + sequential & $-1229.0 \pm 67.9$ & $[-1362.0,\, -1095.9]$ & $-0.81$ & $1.09\times 10^{-56}$ & $7.90\times 10^{-50}$ & $5.44\times 10^{-56}$ & Significant ($A < B$) \\
+Mode H (flagship) vs.\ Mode U & $-133.0 \pm 65.4$ & $[-261.2,\, -4.8]$ & $-0.09$ & 0.043 & 0.085 & 0.043 & Significant ($A < B$) \\
+Mode C (coupled ablation) vs.\ Mode H (flagship) & $-133.9 \pm 41.2$ & $[-214.6,\, -53.2]$ & $-0.15$ & 0.001 & 0.208 & 0.002 & Significant ($A < B$) \\
+\midrule
+\multicolumn{8}{@{}l}{\textit{Family 2: True Expected Loss of Selected Candidate $\Delta \mu(\hat{\bm{\theta}}) = \mu_A - \mu_B$ (dimensionless loss in $[0,1]$; $m=6$ tests)}} \\
+Mode H (flagship) vs.\ Uniform + fixed-4096 & $-0.00158 \pm 0.00031$ & $[-0.00219,\, -0.00097]$ & $-0.23$ & $5.84\times 10^{-7}$ & $7.43\times 10^{-7}$ & $1.17\times 10^{-6}$ & Significant ($A < B$) \\
+Mode H (flagship) vs.\ Adaptive + fixed-4096 & $-0.00228 \pm 0.00028$ & $[-0.00284,\, -0.00173]$ & $-0.36$ & $6.88\times 10^{-15}$ & $6.15\times 10^{-16}$ & $2.75\times 10^{-14}$ & Significant ($A < B$) \\
+Mode U vs.\ Uniform + fixed-4096 & $-0.00029 \pm 0.00028$ & $[-0.00085,\, +0.00026]$ & $-0.05$ & 0.301 & 0.385 & 0.301 & Inconclusive ($p_{\mathrm{Holm}} \ge 0.05$) \\
+Mode C (coupled ablation) vs.\ Uniform + fixed-4096 & $-0.00262 \pm 0.00031$ & $[-0.00324,\, -0.00200]$ & $-0.37$ & $7.96\times 10^{-16}$ & $4.30\times 10^{-21}$ & $3.98\times 10^{-15}$ & Significant ($A < B$) \\
+Mode H (flagship) vs.\ Mode U & $-0.00129 \pm 0.00021$ & $[-0.00170,\, -0.00088]$ & $-0.27$ & $1.60\times 10^{-9}$ & $1.54\times 10^{-8}$ & $4.80\times 10^{-9}$ & Significant ($A < B$) \\
+Mode C (coupled ablation) vs.\ Mode H (flagship) & $-0.00104 \pm 0.00011$ & $[-0.00125,\, -0.00083]$ & $-0.44$ & $3.56\times 10^{-21}$ & $1.68\times 10^{-22}$ & $2.14\times 10^{-20}$ & Significant ($A < B$) \\
+\bottomrule
+\end{tabular}
+\end{table*}

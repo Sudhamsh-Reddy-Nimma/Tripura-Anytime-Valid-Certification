@@ -1,0 +1,18 @@
+\begin{table*}[htbp]
+\caption{Matched-budget end-to-end comparison on the Stage~3 benchmark ($G=500$ graphs: $80$ at $n=12$, $420$ at $n=14$; \texttt{stage3\_corrected\_e2e\_summary.csv} and \texttt{raw/stage3\_corrected\_e2e\_runs.csv}, filter \texttt{budget\_comparison\_class == matched\_2560\_discovery}). Discovery cap $B_{\mathrm{disc}}=2560$, confirmation cap $B_{\mathrm{conf}}=4096$, $\alpha_{\mathrm{disc}}=\alpha_{\mathrm{conf}}=0.05$. Continuous metrics are reported as mean $\pm$ SE ($\mathrm{SE} = \mathrm{SD}/\sqrt{G}$). Bold indicates the flagship guaranteed Mode~H and the top empirical value per column.}
+\label{tab:mode_comparison}
+\centering
+\scriptsize
+\begin{tabular}{@{}l c c c r c c c c c@{}}
+\toprule
+Method / Mode & Discovery shots & Confirmation shots & Total shots & Saved vs.\ 6656 & Best-ID acc. & $\epsilon$-best acc. & Simple regret & Final approx.\ ratio & Optimality gap \\
+\midrule
+\textbf{Mode H (flagship)} & \textbf{$1955.9 \pm 36.9$} & $1242.6 \pm 64.7$ & $3198.5 \pm 86.8$ & \textbf{51.9\%} & 0.486 & 0.946 & $0.0013 \pm 0.0001$ & $0.8481 \pm 0.0011$ & $0.1336 \pm 0.0012$ \\
+Mode U & $1979.8 \pm 36.3$ & $1351.7 \pm 66.2$ & $3331.5 \pm 89.2$ & 49.9\% & 0.398 & 0.878 & $0.0020 \pm 0.0001$ & $0.8466 \pm 0.0012$ & $0.1349 \pm 0.0013$ \\
+Mode C (coupled ablation) & $1982.8 \pm 37.6$ & \textbf{$1081.9 \pm 57.5$} & \textbf{$3064.6 \pm 79.3$} & \textbf{54.0\%} & \textbf{0.718} & \textbf{0.992} & $0.0003 \pm 0.0000$ & $\mathbf{0.8493 \pm 0.0011}$ & $0.1325 \pm 0.0012$ \\
+Uniform + sequential & 2560 & $1733.6 \pm 65.2$ & $4293.6 \pm 65.2$ & 35.5\% & 0.008 & 0.738 & $0.0039 \pm 0.0002$ & $0.8464 \pm 0.0012$ & $0.1352 \pm 0.0013$ \\
+Uniform + fixed-4096 & 2560 & 4096 & 6656 & 0.0\% & 0.008 & 0.738 & $0.0039 \pm 0.0002$ & $0.8464 \pm 0.0012$ & $0.1352 \pm 0.0013$ \\
+Adaptive + fixed-4096 & $2558.8 \pm 1.2$ & 4096 & $6654.8 \pm 1.2$ & 0.0\% & 0.144 & 0.728 & $0.0036 \pm 0.0002$ & $0.8455 \pm 0.0012$ & $0.1359 \pm 0.0013$ \\
+\bottomrule
+\end{tabular}
+\end{table*}

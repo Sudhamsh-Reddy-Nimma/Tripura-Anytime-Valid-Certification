@@ -1,0 +1,6 @@
+elimination_mode,independent_graphs,mean_candidates_eliminated,mean_pct_eliminated,mean_shots_before_elimination,mean_shots_saved,mean_total_discovery_shots,incorrect_elimination_rate,best_candidate_survival_rate,target_failure_detection_rate,best_candidate_accuracy,eps_best_accuracy,mean_simple_regret
+best_candidate_only,100,0.98,8.166666666666668,40.96,270.4,2542.08,0.0,1.0,0.0,0.51,0.9,0.001561868471131597
+combined,100,1.67,13.916666666666668,58.74133333333333,408.32,2536.64,0.0,1.0,0.2250137085137085,0.51,0.9,0.001561868471131597
+none,100,0.0,0.0,0.0,0.0,2542.08,0.0,1.0,0.0,0.51,0.9,0.001561868471131597
+sota_wsr_holm_pairwise,100,4.25,35.416666666666664,75.824,1373.76,2016.32,0.0,1.0,0.5441150793650794,0.39,0.87,0.0019592782519368764
+target_rejection_only,100,1.67,13.916666666666668,58.74133333333333,408.32,2536.64,0.0,1.0,0.2250137085137085,0.51,0.9,0.001561868471131597

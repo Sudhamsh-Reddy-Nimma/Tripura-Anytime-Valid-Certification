@@ -1,0 +1,23 @@
+\begin{table*}[htbp]
+\caption{Summary of mathematical, algorithmic, and empirical components of the Tripura (AMFS~2.0) framework, distinguishing results proved in this work from imported statistical foundations and empirical optimization heuristics (condensed from Section~5 / Table~3 of the theoretical foundation).}
+\label{tab:contributions}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{4.3cm} p{3.1cm} p{4.2cm} p{5.4cm}@{}}
+\toprule
+Framework component & Status classification & Primary literature source & Specific role in Tripura (AMFS~2.0) \\
+\midrule
+Canonical $[0,1]$ bounded single-shot VQA estimator (Def.~2.1) & Framework formulation & Hoeffding (1963); Arrasmith et al.\ (2020) & Unifies projective QAOA bitstrings, importance-sampled Pauli VQE, and holdout QML risk under $[0,1]$ loss normalization. \\
+Global sequential filtration $\mathcal{F}_n$ \& CRN conditional validity (Rem.~2.4) & Proved here & Martingale theory; Audibert et al.\ (2010) & Proves why CRN coupling preserves $\mathbb{E}[X_n\mid\mathcal{F}_{n-1}]=\mu(\bm{\theta}_{A_n})$ on initial simplex vertices ($\bm{\theta}_k\in\mathcal{F}_0$) but breaks it on adaptive proposals ($k>d+1$). \\
+Bias decomposition \& disjoint-support strictness (Thm.~3.1a) & Proved here & Order statistics / winner's-curse literature & Separates $\mathbb{E}[\min_k\hat{\mu}_k]-\mu_\star$ from excess risk $\mathbb{E}[\mu_{\hat{k}}-\mu_\star]$ and establishes exact overlap condition for strict negative bias. \\
+Heterogeneous finite-sample selection-optimism bound (Thm.~3.1b) & Proved here & Sub-Gaussian maximal inequality (Massart, 2007) & Bounds $\mathbb{E}[\mu_{\hat{k}}-\hat{\mu}_{\hat{k}}] \le \sqrt{2\ln K\max_k(v_k/B_k)}$ across unequal candidate shot budgets $B_k$ and variances $v_k$. \\
+Selection-aware in-sample false-certification identity (Thm.~3.1c) & Proved here & Multiple testing theory & Distinguishes empirical-mean selection $\Pr(U_{\hat{k}}\le\tau)$ from UCB-minimum selection $1-\prod_k(1-p_k)$ under unequal confidence radii $r_k$. \\
+Empirical-Bernstein \& Gamma-Exp.\ confidence sequences (Prop.~3.3) & Imported foundation & Howard, Ramdas, McAuliffe, \& Sekhon (2021) & Provides closed-form stitched and gamma-exponential time-uniform confidence boundaries under Assumption~2.3. \\
+Hedged-capital betting CS (aGRAPA) \& outer bracketing (Prop.~3.4) & Imported foundation (bracketing proved here) & Waudby-Smith \& Ramdas (2024) & Provides adaptive betting martingales $\mathcal{K}_t^\pm(m)$ with conservative outer-grid bracketing $C_t \subseteq [L_k^{\mathrm{grid}}(t), U_k^{\mathrm{grid}}(t)]$. \\
+Simultaneous Phase~A safe elimination of $\epsilon_{\mathrm{best}}$-optimal arms (Thm.~3.6) & Framework extension & Kalyanakrishnan et al.\ (2012) LUCB; Holm (1979) & Preserves all candidates satisfying $\mu(\bm{\theta}_k) \le \mu_\star + \epsilon_{\mathrm{best}}$ across sequential racing rounds with probability $\ge 1-\alpha_{\mathrm{disc}}$. \\
+End-to-end conditional certification \& drift robustness (Thm.~3.8a--c) & Proved here & Sample splitting; Ville's inequality (1939) & Proves $\Pr(D=\mathrm{CERTIFIED},\, \mu(\hat{\bm{\theta}})>\tau) \le \alpha_{\mathrm{conf}}$ under martingale conditional-mean stationarity and bounded drift $\delta_{\mathrm{drift}}$. \\
+Two-stage discovery \& confirmation sample complexity (Thm.~3.8d) & Proved here & Best-arm identification (Kaufmann et al., 2016) & Bounds confirmation stopping time $\mathcal{O}(\delta^{-2}\ln(\delta^{-2}/\alpha_{\mathrm{conf}}))$ and gap-adaptive discovery elimination $\mathcal{O}((\Delta_k-\epsilon_{\mathrm{best}})^{-2}\ln(K_{\max}/\alpha_{\mathrm{disc}}))$. \\
+COBYLA trust-region search, $\mathbb{Z}_2$ folding \& adaptive-leader step-down & Empirical heuristic & Powell (1994); Farhi et al.\ (2014) & Improves practical discovery quality and pruning speed; evaluated empirically rather than claimed as a global non-convex optimality theorem. \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,30 @@
+\begin{table*}[htbp]
+\caption{In-sample selection bias $\mathbb{E}[\hat{\mu}_{\hat{k}} - \mu(\hat{\bm{\theta}})]$ versus fresh Phase~C confirmation bias ($B_{\mathrm{conf}}=4096$) across per-candidate shot budgets $B \in \{256, 512, 1024, 2048\}$ and candidate pool checkpoints $K \in \{1, 25, 50, 100\}$ on the Stage~2 benchmark ($G=100$ graphs, $300$ trajectories per cell; \texttt{stage2\_bias\_and\_confirmation\_summary.csv}). Uncertainties are mean $\pm$ graph-clustered SE. Theoretical bounds from Theorem~3.1(b) $\sqrt{2\ln K \max_k(v_k/B)}$ are shown for the worst-case bounded proxy $v_k=1/4$ and (in parentheses) the statevector variance proxy $\sqrt{v_k/B} = \mathrm{SE}_{\mathrm{exact}}$. No multi-candidate configuration ($K > 1$) violates the theoretical bound.}
+\label{tab:selection_bias}
+\centering
+\footnotesize
+\begin{tabular}{@{}l r r c c c c@{}}
+\toprule
+Stratum & $B$ & $K$ & In-sample bias $\hat{\mu}_{\hat{k}} - \mu(\hat{\bm{\theta}})$ & Phase~C bias ($B_{\mathrm{conf}}=4096$) & Theory bound $v=1/4$ (emp.\ $v_k$) & Bound / $|\mathrm{Bias}|$ ratio \\
+\midrule
+Pooled ($G=100$) & 256 & 1 & $+0.0001 \pm 0.0003$ & $-0.0001 \pm 0.0001$ & 0.0000 (0.0000) & n/a ($K=1$)\textsuperscript{a} \\
+Pooled ($G=100$) & 256 & 25 & $-0.0099 \pm 0.0003$ & $+0.0000 \pm 0.0001$ & 0.0793 (0.0137) & 7.98 (1.38) \\
+Pooled ($G=100$) & 256 & 50 & $-0.0117 \pm 0.0003$ & $-0.0000 \pm 0.0001$ & 0.0874 (0.0151) & 7.48 (1.29) \\
+Pooled ($G=100$) & 256 & 100 & $-0.0124 \pm 0.0003$ & $+0.0001 \pm 0.0001$ & 0.0948 (0.0164) & 7.62 (1.32) \\
+Pooled ($G=100$) & 512 & 1 & $+0.0000 \pm 0.0002$ & $-0.0001 \pm 0.0001$ & 0.0000 (0.0000) & n/a ($K=1$)\textsuperscript{a} \\
+Pooled ($G=100$) & 512 & 25 & $-0.0068 \pm 0.0002$ & $+0.0001 \pm 0.0001$ & 0.0561 (0.0096) & 8.25 (1.41) \\
+Pooled ($G=100$) & 512 & 50 & $-0.0081 \pm 0.0002$ & $-0.0000 \pm 0.0001$ & 0.0618 (0.0105) & 7.59 (1.30) \\
+Pooled ($G=100$) & 512 & 100 & $-0.0088 \pm 0.0002$ & $+0.0002 \pm 0.0001$ & 0.0671 (0.0115) & 7.58 (1.30) \\
+Pooled ($G=100$) & 1024 & 1 & $+0.0002 \pm 0.0002$ & $-0.0000 \pm 0.0001$ & 0.0000 (0.0000) & n/a ($K=1$)\textsuperscript{a} \\
+Pooled ($G=100$) & 1024 & 25 & $-0.0048 \pm 0.0001$ & $-0.0000 \pm 0.0001$ & 0.0396 (0.0068) & 8.31 (1.42) \\
+Pooled ($G=100$) & 1024 & 50 & $-0.0059 \pm 0.0002$ & $-0.0001 \pm 0.0001$ & 0.0437 (0.0075) & 7.47 (1.28) \\
+Pooled ($G=100$) & 1024 & 100 & $-0.0062 \pm 0.0002$ & $+0.0002 \pm 0.0001$ & 0.0474 (0.0081) & 7.62 (1.31) \\
+Pooled ($G=100$) & 2048 & 1 & $+0.0001 \pm 0.0001$ & $-0.0000 \pm 0.0001$ & 0.0000 (0.0000) & n/a ($K=1$)\textsuperscript{a} \\
+Pooled ($G=100$) & 2048 & 25 & $-0.0033 \pm 0.0001$ & $-0.0000 \pm 0.0001$ & 0.0280 (0.0048) & 8.51 (1.46) \\
+Pooled ($G=100$) & 2048 & 50 & $-0.0040 \pm 0.0001$ & $-0.0001 \pm 0.0001$ & 0.0309 (0.0053) & 7.65 (1.31) \\
+Pooled ($G=100$) & 2048 & 100 & $-0.0043 \pm 0.0001$ & $+0.0002 \pm 0.0001$ & 0.0335 (0.0057) & 7.72 (1.32) \\
+\bottomrule
+\end{tabular}
+\vspace{0.3em}
+\par\noindent\footnotesize\textsuperscript{a}At $K=1$, $\ln K = 0$ so the theoretical selection-bias bound is identically $0.0000$; the observed $|\hat{\mu}_1 - \mu_1| \le 0.0002$ is zero-mean finite-shot sampling fluctuation within $\pm 1\;\mathrm{SE}$.
+\end{table*}

@@ -1,0 +1,21 @@
+\begin{table*}[htbp]
+\caption{Phase~A candidate elimination safety and shot savings across the fixed-pool benchmark (Experiment~10, $G=100$ graphs, $K=12$ candidates; \texttt{stage3\_corrected\_elimination\_summary.csv}) and the adaptive COBYLA 50-graph validation suite (\texttt{minimal\_validation\_50graphs\_summary.csv}). Across all settings, zero $\epsilon_{\mathrm{best}}$-optimal candidates are erroneously eliminated (Theorem~3.6).}
+\label{tab:elimination_safety}
+\centering
+\footnotesize
+\begin{tabular}{@{}l c r c c r r@{}}
+\toprule
+Setting \& elimination rule & Graphs $G$ & Candidates eliminated & Incorrect eliminations & Family coverage / survival & Shots saved & Mean discovery shots \\
+\midrule
+Fixed pool ($K=12$): Best-candidate CS dominance only & $G=100$ & 8.2\% & 0/100 (0.000) & 1.000 & 270.4 & 2542.1 \\
+Fixed pool ($K=12$): Combined Gamma-Exp.\ EB elimination & $G=100$ & 13.9\% & 0/100 (0.000) & 1.000 & 408.3 & 2536.6 \\
+Fixed pool ($K=12$): No elimination & $G=100$ & 0.0\% & 0/100 (0.000) & 1.000 & 0.0 & 2542.1 \\
+\textbf{Fixed pool ($K=12$): WSR betting + Holm + pairwise} & $G=100$ & 35.4\% & 0/100 (0.000) & 1.000 & 1373.8 & 2016.3 \\
+Fixed pool ($K=12$): Target-threshold CS rejection only & $G=100$ & 13.9\% & 0/100 (0.000) & 1.000 & 408.3 & 2536.6 \\
+COBYLA ($K_{\max}=10$): Guaranteed simplex CRN (\texttt{C1}) & $G=50$ & 17.2\% & 0/50 (0.000) & 1.000 & 365.4 & 2194.6 \\
+COBYLA ($K_{\max}=10$): Guaranteed uncoupled (\texttt{C2}) & $G=50$ & 16.6\% & 0/50 (0.000) & 1.000 & 384.6 & 2175.4 \\
+\textbf{COBYLA ($K_{\max}=10$): Mode~H flagship (50-graph suite)} & $G=50$ & 20.2\% & 0/50 (0.000) & 1.000 & 501.1 & 2058.9 \\
+COBYLA ($K_{\max}=10$): Mode~C coupled (50-graph suite) & $G=50$ & 19.4\% & 0/50 (0.000) & 1.000 & 459.5 & 2100.5 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,52 @@
+\begin{table*}[htbp]
+\caption{Comparison of unsplit in-sample certification versus frozen independent Phase~C confirmation ($B_{\mathrm{conf}}=4096$, $\alpha=0.05$) across discovery budgets $B \in \{256, 1024\}$ and checkpoints $K \in \{1, 25, 50, 100\}$ on the Stage~2 benchmark ($G=100$ graphs, $N=300$ trajectories per row; \texttt{stage2\_certification\_summary.csv}). Proportions for false-certification rate include exact two-sided $95\%$ Clopper--Pearson intervals. Bold highlights the primary independent Empirical-Bernstein (EB) confirmation engine and valid $\ge 0.950$ empirical coverage.}
+\label{tab:insample_vs_independent}
+\centering
+\scriptsize
+\begin{tabular}{@{}l r r l c c c c c@{}}
+\toprule
+Stratum & $B$ & $K$ & Evaluation regime \& method & Cert.\ rate & False-cert.\ rate [CP $95\%$] & False non-cert.\ & Empirical coverage & Mean bound slack \\
+\midrule
+Pooled & 256 & 1 & In-sample Bonferroni EB & 0.007 & 0.000 [0.000, 0.012] & 0.663 & \textbf{1.000} & 0.0488 \\
+Pooled & 256 & 1 & In-sample naive EB (unsplit) & 0.007 & 0.000 [0.000, 0.012] & 0.663 & \textbf{1.000} & 0.0488 \\
+Pooled & 256 & 1 & In-sample Student-$t$ (unsplit) & 0.497 & 0.003 [0.000, 0.018] & 0.177 & 0.947 & 0.0091 \\
+Pooled & 256 & 1 & \textbf{Frozen Phase~C EB ($B_{\mathrm{conf}}=4096$)} & \textbf{0.567} & 0.000 [0.000, 0.012] & 0.103 & \textbf{1.000} & 0.0059 \\
+Pooled & 256 & 1 & Frozen Phase~C Hoeffding ($B_{\mathrm{conf}}=4096$) & 0.317 & 0.000 [0.000, 0.012] & 0.353 & \textbf{1.000} & 0.0191 \\
+Pooled & 256 & 25 & In-sample Bonferroni EB & 0.003 & 0.000 [0.000, 0.012] & 0.680 & \textbf{1.000} & 0.0825 \\
+Pooled & 256 & 25 & In-sample naive EB (unsplit) & 0.040 & 0.000 [0.000, 0.012] & 0.643 & \textbf{1.000} & 0.0478 \\
+Pooled & 256 & 25 & In-sample Student-$t$ (unsplit) & 0.700 & 0.023 [0.009, 0.047] & 0.007 & 0.343 & 0.0086 \\
+Pooled & 256 & 25 & \textbf{Frozen Phase~C EB ($B_{\mathrm{conf}}=4096$)} & \textbf{0.567} & 0.000 [0.000, 0.012] & 0.117 & \textbf{1.000} & 0.0058 \\
+Pooled & 256 & 25 & Frozen Phase~C Hoeffding ($B_{\mathrm{conf}}=4096$) & 0.293 & 0.000 [0.000, 0.012] & 0.390 & \textbf{1.000} & 0.0191 \\
+Pooled & 256 & 50 & In-sample Bonferroni EB & 0.000 & 0.000 [0.000, 0.012] & 0.683 & \textbf{1.000} & 0.0897 \\
+Pooled & 256 & 50 & In-sample naive EB (unsplit) & 0.057 & 0.000 [0.000, 0.012] & 0.627 & \textbf{1.000} & 0.0478 \\
+Pooled & 256 & 50 & In-sample Student-$t$ (unsplit) & 0.723 & 0.040 [0.021, 0.069] & 0.000 & 0.093 & 0.0085 \\
+Pooled & 256 & 50 & \textbf{Frozen Phase~C EB ($B_{\mathrm{conf}}=4096$)} & \textbf{0.577} & 0.000 [0.000, 0.012] & 0.107 & \textbf{1.000} & 0.0058 \\
+Pooled & 256 & 50 & Frozen Phase~C Hoeffding ($B_{\mathrm{conf}}=4096$) & 0.300 & 0.000 [0.000, 0.012] & 0.383 & \textbf{1.000} & 0.0191 \\
+Pooled & 256 & 100 & In-sample Bonferroni EB & 0.000 & 0.000 [0.000, 0.012] & 0.703 & \textbf{1.000} & 0.0969 \\
+Pooled & 256 & 100 & In-sample naive EB (unsplit) & 0.077 & 0.000 [0.000, 0.012] & 0.627 & \textbf{1.000} & 0.0477 \\
+Pooled & 256 & 100 & In-sample Student-$t$ (unsplit) & 0.753 & 0.050 [0.028, 0.081] & 0.000 & 0.060 & 0.0085 \\
+Pooled & 256 & 100 & \textbf{Frozen Phase~C EB ($B_{\mathrm{conf}}=4096$)} & \textbf{0.583} & 0.000 [0.000, 0.012] & 0.120 & \textbf{1.000} & 0.0058 \\
+Pooled & 256 & 100 & Frozen Phase~C Hoeffding ($B_{\mathrm{conf}}=4096$) & 0.290 & 0.000 [0.000, 0.012] & 0.413 & \textbf{1.000} & 0.0191 \\
+Pooled & 1024 & 1 & In-sample Bonferroni EB & 0.380 & 0.000 [0.000, 0.012] & 0.313 & \textbf{1.000} & 0.0159 \\
+Pooled & 1024 & 1 & In-sample naive EB (unsplit) & 0.380 & 0.000 [0.000, 0.012] & 0.313 & \textbf{1.000} & 0.0159 \\
+Pooled & 1024 & 1 & In-sample Student-$t$ (unsplit) & 0.600 & 0.000 [0.000, 0.012] & 0.093 & 0.950 & 0.0046 \\
+Pooled & 1024 & 1 & \textbf{Frozen Phase~C EB ($B_{\mathrm{conf}}=4096$)} & \textbf{0.587} & 0.000 [0.000, 0.012] & 0.107 & \textbf{1.000} & 0.0059 \\
+Pooled & 1024 & 1 & Frozen Phase~C Hoeffding ($B_{\mathrm{conf}}=4096$) & 0.313 & 0.000 [0.000, 0.012] & 0.380 & \textbf{1.000} & 0.0191 \\
+Pooled & 1024 & 25 & In-sample Bonferroni EB & 0.283 & 0.000 [0.000, 0.012] & 0.443 & \textbf{1.000} & 0.0255 \\
+Pooled & 1024 & 25 & In-sample naive EB (unsplit) & 0.490 & 0.000 [0.000, 0.012] & 0.237 & \textbf{1.000} & 0.0155 \\
+Pooled & 1024 & 25 & In-sample Student-$t$ (unsplit) & 0.733 & 0.013 [0.004, 0.034] & 0.007 & 0.400 & 0.0043 \\
+Pooled & 1024 & 25 & \textbf{Frozen Phase~C EB ($B_{\mathrm{conf}}=4096$)} & \textbf{0.607} & 0.000 [0.000, 0.012] & 0.120 & \textbf{1.000} & 0.0057 \\
+Pooled & 1024 & 25 & Frozen Phase~C Hoeffding ($B_{\mathrm{conf}}=4096$) & 0.323 & 0.000 [0.000, 0.012] & 0.403 & \textbf{1.000} & 0.0191 \\
+Pooled & 1024 & 50 & In-sample Bonferroni EB & 0.253 & 0.000 [0.000, 0.012] & 0.473 & \textbf{1.000} & 0.0275 \\
+Pooled & 1024 & 50 & In-sample naive EB (unsplit) & 0.513 & 0.000 [0.000, 0.012] & 0.213 & \textbf{1.000} & 0.0155 \\
+Pooled & 1024 & 50 & In-sample Student-$t$ (unsplit) & 0.747 & 0.020 [0.007, 0.043] & 0.000 & 0.090 & 0.0043 \\
+Pooled & 1024 & 50 & \textbf{Frozen Phase~C EB ($B_{\mathrm{conf}}=4096$)} & \textbf{0.623} & 0.000 [0.000, 0.012] & 0.103 & \textbf{1.000} & 0.0057 \\
+Pooled & 1024 & 50 & Frozen Phase~C Hoeffding ($B_{\mathrm{conf}}=4096$) & 0.327 & 0.000 [0.000, 0.012] & 0.400 & \textbf{1.000} & 0.0191 \\
+Pooled & 1024 & 100 & In-sample Bonferroni EB & 0.223 & 0.000 [0.000, 0.012] & 0.517 & \textbf{1.000} & 0.0296 \\
+Pooled & 1024 & 100 & In-sample naive EB (unsplit) & 0.540 & 0.000 [0.000, 0.012] & 0.200 & \textbf{1.000} & 0.0155 \\
+Pooled & 1024 & 100 & In-sample Student-$t$ (unsplit) & 0.760 & 0.020 [0.007, 0.043] & 0.000 & 0.063 & 0.0043 \\
+Pooled & 1024 & 100 & \textbf{Frozen Phase~C EB ($B_{\mathrm{conf}}=4096$)} & \textbf{0.603} & 0.000 [0.000, 0.012] & 0.137 & \textbf{1.000} & 0.0057 \\
+Pooled & 1024 & 100 & Frozen Phase~C Hoeffding ($B_{\mathrm{conf}}=4096$) & 0.343 & 0.000 [0.000, 0.012] & 0.397 & \textbf{1.000} & 0.0191 \\
+\bottomrule
+\end{tabular}
+\end{table*}

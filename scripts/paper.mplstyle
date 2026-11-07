@@ -1,0 +1,50 @@
+# Physical Review A (PRA) Unified Matplotlib Style Sheet — AMFS 2.0
+font.family: serif
+font.serif: STIXGeneral, DejaVu Serif, Computer Modern Roman
+mathtext.fontset: stix
+font.size: 8.5
+
+axes.titlesize: 8.8
+axes.titleweight: bold
+axes.labelsize: 8.5
+axes.labelweight: normal
+axes.linewidth: 0.7
+axes.spines.top: False
+axes.spines.right: False
+axes.grid: True
+axes.grid.axis: y
+axes.axisbelow: True
+
+grid.color: CBD5E1
+grid.linestyle: -
+grid.linewidth: 0.45
+grid.alpha: 0.55
+
+xtick.labelsize: 7.2
+ytick.labelsize: 7.2
+xtick.direction: out
+ytick.direction: out
+xtick.major.size: 3.0
+ytick.major.size: 3.0
+xtick.major.width: 0.65
+ytick.major.width: 0.65
+xtick.minor.size: 1.8
+ytick.minor.size: 1.8
+
+legend.fontsize: 7.0
+legend.frameon: True
+legend.framealpha: 0.92
+legend.edgecolor: CBD5E1
+legend.fancybox: False
+legend.borderpad: 0.32
+legend.handlelength: 1.5
+
+lines.linewidth: 1.35
+lines.markersize: 4.5
+errorbar.capsize: 2.2
+
+figure.constrained_layout.use: True
+figure.dpi: 300
+savefig.dpi: 600
+pdf.fonttype: 42
+ps.fonttype: 42

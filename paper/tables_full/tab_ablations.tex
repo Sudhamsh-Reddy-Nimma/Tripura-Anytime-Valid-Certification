@@ -1,0 +1,32 @@
+\begin{table*}[htbp]
+\caption{Complete Stage~3 ablation study across $G=500$ graphs (\texttt{stage3\_corrected\_e2e\_summary.csv}, \texttt{stratum == pooled\_500}). All \texttt{hao\_2025} rows are excluded per scope rules. The top block compares iso-budget discovery methods ($B_{\mathrm{disc}}=2560$ shots); the bottom block is visually separated and reports \texttt{different\_budget\_reference} baselines ($B_{\mathrm{disc}}=4096$ or warm-start $K=1$ with $B_{\mathrm{disc}}=256$), which must not be compared as iso-budget discovery alternatives.}
+\label{tab:ablations}
+\centering
+\scriptsize
+\begin{tabular}{@{}l r r c r c r c c c c c@{}}
+\toprule
+Method / Ablation variant & Disc.\ shots & Conf.\ shots & Total shots ($\pm$ SE) & Saved vs.\ 6656 & $K$ eval. & Elim.\ (\%) & Best-ID & $\epsilon$-best ID & Simple regret & Approx.\ ratio & Opt.\ gap \\
+\midrule
+\multicolumn{12}{@{}l}{\textit{Matched-budget discovery block (\texttt{budget\_comparison\_class = matched\_2560\_discovery}, $B_{\mathrm{disc}}=2560$)}} \\
+\textbf{Mode H (flagship)} & 1955.9 & 1242.6 & $3198.5 \pm 86.8$ & 51.9\% & 8.1 & 21.6\% & 0.486 & 0.946 & 0.0013 & 0.8481 & 0.1336 \\
+Mode U & 1979.8 & 1351.7 & $3331.5 \pm 89.2$ & 49.9\% & 8.1 & 21.8\% & 0.398 & 0.878 & 0.0020 & 0.8466 & 0.1349 \\
+Mode C (coupled ablation) & 1982.8 & 1081.9 & $3064.6 \pm 79.3$ & 54.0\% & 8.1 & 21.4\% & 0.718 & 0.992 & 0.0003 & 0.8493 & 0.1325 \\
+LUCB top-two challenger & 2506.1 & 1718.8 & $4224.9 \pm 67.2$ & 36.5\% & 16.0 & 0.2\% & 0.254 & 0.822 & 0.0027 & 0.8466 & 0.1349 \\
+Variance + gap adaptive & 2529.2 & 1732.6 & $4261.8 \pm 67.4$ & 36.0\% & 16.0 & 0.1\% & 0.204 & 0.782 & 0.0030 & 0.8463 & 0.1352 \\
+Top-three racing & 2559.4 & 1741.8 & $4301.2 \pm 65.2$ & 35.4\% & 16.0 & 0.0\% & 0.144 & 0.690 & 0.0038 & 0.8453 & 0.1360 \\
+Standard EB adaptive & 2558.8 & 1700.9 & $4259.6 \pm 64.8$ & 36.0\% & 16.0 & 0.0\% & 0.144 & 0.728 & 0.0036 & 0.8455 & 0.1359 \\
+Gap-only allocation (Abl. 2) & 2557.3 & 1724.9 & $4282.2 \pm 64.9$ & 35.7\% & 16.0 & 0.0\% & 0.158 & 0.716 & 0.0037 & 0.8455 & 0.1359 \\
+Variance-only allocation (Abl. 3) & 2560.0 & 1756.2 & $4316.2 \pm 66.4$ & 35.2\% & 16.0 & 0.0\% & 0.132 & 0.706 & 0.0039 & 0.8452 & 0.1361 \\
+No candidate elimination (Abl. 4) & 2560.0 & 1693.7 & $4253.7 \pm 64.8$ & 36.1\% & 16.0 & 0.0\% & 0.144 & 0.728 & 0.0036 & 0.8455 & 0.1359 \\
+Two-attempt confirmation & 2558.8 & 2101.2 & $4660.0 \pm 73.6$ & 30.0\% & 16.0 & 0.0\% & 0.150 & 0.738 & 0.0035 & 0.8456 & 0.1358 \\
+Uniform + sequential & 2560.0 & 1733.6 & $4293.6 \pm 65.2$ & 35.5\% & 16.0 & 0.0\% & 0.008 & 0.738 & 0.0039 & 0.8464 & 0.1352 \\
+Adaptive + fixed-4096 & 2558.8 & 4096.0 & $6654.8 \pm 1.2$ & 0.0\% & 16.0 & 0.0\% & 0.144 & 0.728 & 0.0036 & 0.8455 & 0.1359 \\
+Uniform + fixed-4096 & 2560.0 & 4096.0 & $6656.0 \pm 0.0$ & 0.0\% & 16.0 & 0.0\% & 0.008 & 0.738 & 0.0039 & 0.8464 & 0.1352 \\
+\midrule
+\multicolumn{12}{@{}l}{\textit{Different-budget reference block (\texttt{budget\_comparison\_class = different\_budget\_reference}; non-iso-budget reference only)}} \\
+Fixed COBYLA-4096 + fixed-4096 & 4096.0 & 4096.0 & $8192.0 \pm 0.0$ & -23.1\% & 16.0 & 0.0\% & 0.014 & 0.814 & 0.0030 & 0.8478 & 0.1339 \\
+Warm-start $K=1$ + fixed-4096 & 256.0 & 4096.0 & $4352.0 \pm 0.0$ & +34.6\% & 1.0 & 0.0\% & 1.000 & 1.000 & 0.0000 & 0.8456 & 0.1358 \\
+Warm-start $K=1$ + sequential & 256.0 & 1640.4 & $1896.4 \pm 65.4$ & +71.5\% & 1.0 & 0.0\% & 1.000 & 1.000 & 0.0000 & 0.8456 & 0.1358 \\
+\bottomrule
+\end{tabular}
+\end{table*}

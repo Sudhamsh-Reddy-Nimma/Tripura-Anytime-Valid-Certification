@@ -1,0 +1,37 @@
+\begin{table*}[htbp]
+\caption{Stratified performance across graph sizes ($n=12$, $G=80$ vs.\ $n=14$, $G=420$; \texttt{stage3\_corrected\_e2e\_summary.csv}) and robustness stress tests across $14$ hardware-noise, circuit-depth, graph-family, initialization, and threshold perturbations (\texttt{stage3\_corrected\_robustness\_summary.csv}). Zero false certifications occur across all strata and all perturbation regimes.}
+\label{tab:robustness_strata}
+\centering
+\scriptsize
+\begin{tabular}{@{}l c r r c c c c c@{}}
+\toprule
+Stratum or perturbation regime & Graphs $G$ & Disc.\ shots & Conf.\ shots & Total shots (saved) & Final loss (approx.\ ratio) & Cert.\ rate & False certs. & CS cov. \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Panel A: Graph-size stratification on the 500-graph benchmark ($n=12$, $G=80$ and $n=14$, $G=420$)}} \\
+$n=12$ stratum ($G=80$): \textbf{Mode H (flagship)} & 80 & 1714.0 & 1228.8 & 2942.8 (55.8\%) & 0.2612 (0.8509) & 0.438 & 0/80 & 1.000 \\
+$n=12$ stratum ($G=80$): Mode U & 80 & 1818.4 & 1561.6 & 3380.0 (49.2\%) & 0.2623 (0.8497) & 0.400 & 0/80 & 1.000 \\
+$n=12$ stratum ($G=80$): Mode C (coupled ablation) & 80 & 1728.8 & 995.2 & 2724.0 (59.1\%) & 0.2604 (0.8519) & 0.512 & 0/80 & 1.000 \\
+$n=12$ stratum ($G=80$): Uniform + fixed-4096 & 80 & 2560.0 & 4096.0 & 6656.0 (0.0\%) & 0.2629 (0.8492) & 0.375 & 0/80 & 1.000 \\
+$n=14$ stratum ($G=420$): \textbf{Mode H (flagship)} & 420 & 2002.0 & 1245.3 & 3247.2 (51.2\%) & 0.2596 (0.8475) & 0.643 & 0/420 & 0.998 \\
+$n=14$ stratum ($G=420$): Mode U & 420 & 2010.6 & 1311.7 & 3322.3 (50.1\%) & 0.2610 (0.8461) & 0.614 & 0/420 & 1.000 \\
+$n=14$ stratum ($G=420$): Mode C (coupled ablation) & 420 & 2031.2 & 1098.4 & 3129.5 (53.0\%) & 0.2586 (0.8488) & 0.693 & 0/420 & 1.000 \\
+$n=14$ stratum ($G=420$): Uniform + fixed-4096 & 420 & 2560.0 & 4096.0 & 6656.0 (0.0\%) & 0.2612 (0.8458) & 0.562 & 0/420 & 1.000 \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Panel B: Perturbation and noise robustness suite (Standard EB confirmation pipeline, $G=60$ or $G=30$)}} \\
+Default 3-regular ($p=2$, noiseless, $B_{\mathrm{disc}}=2560$) & 60 & 2560.0 & 1902.9 & 4462.9 & 0.2612 & 0.450 (rej.\ 0.250) & 0/60 & 1.000 \\
+Reduced discovery cap ($B_{\mathrm{disc}}=1280$) & 60 & 1280.0 & 2030.9 & 3310.9 & 0.2626 & 0.400 (rej.\ 0.317) & 0/60 & 1.000 \\
+Expanded discovery cap ($B_{\mathrm{disc}}=4096$) & 60 & 4054.4 & 1689.6 & 5744.0 & 0.2609 & 0.517 (rej.\ 0.283) & 0/60 & 1.000 \\
+Larger candidate cap ($K_{\max}=24$) & 60 & 2560.0 & 1804.8 & 4364.8 & 0.2634 & 0.450 (rej.\ 0.317) & 0/60 & 1.000 \\
+Smaller candidate cap ($K_{\max}=8$) & 60 & 2532.8 & 1710.9 & 4243.7 & 0.2607 & 0.500 (rej.\ 0.317) & 0/60 & 1.000 \\
+Shallower QAOA circuit ($p=1$) & 60 & 2553.6 & 738.1 & 3291.7 & 0.3255 & 0.000 (rej.\ 0.983) & 0/60 & 1.000 \\
+4-regular graph family ($n=12$) & 30 & 313.6 & 256.0 & 569.6 & 0.5129 & 0.000 (rej.\ 1.000) & 0/30 & 1.000 \\
+Uniform random parameter initialization & 60 & 547.2 & 290.1 & 837.3 & 0.4935 & 0.017 (rej.\ 0.983) & 0/60 & 1.000 \\
+Depolarizing measurement noise ($p_{\mathrm{err}}=0.02$) & 60 & 2560.0 & 1924.3 & 4484.3 & 0.2667 & 0.317 (rej.\ 0.433) & 0/60 & 1.000 \\
+Depolarizing measurement noise ($p_{\mathrm{err}}=0.05$) & 60 & 2560.0 & 1941.3 & 4501.3 & 0.2744 & 0.183 (rej.\ 0.600) & 0/60 & 1.000 \\
+Larger pilot batch ($B_{\mathrm{pilot}}=128$) & 60 & 2560.0 & 1937.1 & 4497.1 & 0.2622 & 0.450 (rej.\ 0.267) & 0/60 & 1.000 \\
+Smaller pilot batch ($B_{\mathrm{pilot}}=32$) & 60 & 2560.0 & 1676.8 & 4236.8 & 0.2629 & 0.450 (rej.\ 0.367) & 0/60 & 1.000 \\
+Relaxed target threshold ($	au_n + 0.01$) & 60 & 2560.0 & 1634.1 & 4194.1 & 0.2622 & 0.650 (rej.\ 0.117) & 0/60 & 1.000 \\
+Strict target threshold ($	au_n - 0.01$) & 60 & 2560.0 & 1740.8 & 4300.8 & 0.2624 & 0.250 (rej.\ 0.517) & 0/60 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table*}

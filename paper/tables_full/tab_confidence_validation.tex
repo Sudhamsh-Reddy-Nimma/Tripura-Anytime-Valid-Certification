@@ -1,0 +1,36 @@
+\begin{table*}[htbp]
+\caption{Time-uniform confidence sequence calibration (Experiment~9, family error level $\alpha=0.05$, $\alpha_k = \alpha/K$; \texttt{exp9\_corrected\_confidence\_validation.csv} and \texttt{certification/confidence\_sequences.py}). Compares Howard et al.\ (2021) Stitched EB and Gamma-Exponential EB ($1000$ replications) against Waudby-Smith \& Ramdas (2024) aGRAPA hedged-capital betting CS across four $[0,1]$-bounded distributions and family sizes $K \in \{1, 12\}$. Half-width is $r_t = (U_t - L_t)/2$. The radius ratio $\mathrm{aGRAPA}/\mathrm{EB}$ is reported strictly as an empirical finite-sample efficiency observation (Remark~3.5), not a universal dominance theorem.}
+\label{tab:confidence_validation}
+\centering
+\scriptsize
+\begin{tabular}{@{}l l l c c c c@{}}
+\toprule
+Bounded distribution & Family size \& horizon & Confidence sequence engine & Time-uniform coverage [95\% CP] & Mean half-width ($T=256$) & Mean half-width ($T=T_{\max}$) & Radius ratio ($T=256$) \\
+\midrule
+Bernoulli ($\mu=0.25$) & $K=1$ ($T=2048$) & Howard Stitched EB & 1.000 & 0.1401 & 0.0416 & 1.32 \\
+Bernoulli ($\mu=0.25$) & $K=1$ ($T=2048$) & Howard Gamma-Exp.\ EB & 0.999 [0.994, 1.000] & 0.1063 & 0.0355 & 1.00 (ref.) \\
+Bernoulli ($\mu=0.25$) & $K=1$ ($T=2048$) & \textbf{WSR aGRAPA Betting} & 0.995 [0.972, 1.000] & \textbf{0.0965} & \textbf{0.0366} & \textbf{0.91} (0.69 vs.\ St.) \\
+Bernoulli ($\mu=0.25$) & $K=12$ ($T=1024$) & Howard Stitched EB & 1.000 & 0.1718 & 0.0732 & 1.27 \\
+Bernoulli ($\mu=0.25$) & $K=12$ ($T=1024$) & Howard Gamma-Exp.\ EB & 0.999 [0.994, 1.000] & 0.1352 & 0.0629 & 1.00 (ref.) \\
+Bernoulli ($\mu=0.25$) & $K=12$ ($T=1024$) & \textbf{WSR aGRAPA Betting} & 0.995 [0.972, 1.000] & \textbf{0.1150} & \textbf{0.0596} & \textbf{0.85} (0.67 vs.\ St.) \\
+QAOA Beta ($\mu=0.25$) & $K=1$ ($T=2048$) & Howard Stitched EB & 1.000 & 0.0584 & 0.0073 & 2.64 \\
+QAOA Beta ($\mu=0.25$) & $K=1$ ($T=2048$) & Howard Gamma-Exp.\ EB & 1.000 [0.996, 1.000] & 0.0221 & 0.0045 & 1.00 (ref.) \\
+QAOA Beta ($\mu=0.25$) & $K=1$ ($T=2048$) & \textbf{WSR aGRAPA Betting} & 0.990 [0.964, 0.999] & \textbf{0.0222} & \textbf{0.0085} & \textbf{1.00} (0.38 vs.\ St.) \\
+QAOA Beta ($\mu=0.25$) & $K=12$ ($T=1024$) & Howard Stitched EB & 1.000 & 0.0828 & 0.0207 & 2.51 \\
+QAOA Beta ($\mu=0.25$) & $K=12$ ($T=1024$) & Howard Gamma-Exp.\ EB & 1.000 [0.996, 1.000] & 0.0330 & 0.0107 & 1.00 (ref.) \\
+QAOA Beta ($\mu=0.25$) & $K=12$ ($T=1024$) & \textbf{WSR aGRAPA Betting} & 1.000 [0.982, 1.000] & \textbf{0.0289} & \textbf{0.0140} & \textbf{0.88} (0.35 vs.\ St.) \\
+Two-point ($\mu=0.25$) & $K=1$ ($T=2048$) & Howard Stitched EB & 1.000 & 0.1181 & 0.0340 & 1.36 \\
+Two-point ($\mu=0.25$) & $K=1$ ($T=2048$) & Howard Gamma-Exp.\ EB & 0.999 [0.994, 1.000] & 0.0866 & 0.0283 & 1.00 (ref.) \\
+Two-point ($\mu=0.25$) & $K=1$ ($T=2048$) & \textbf{WSR aGRAPA Betting} & 1.000 [0.982, 1.000] & \textbf{0.0738} & \textbf{0.0284} & \textbf{0.85} (0.62 vs.\ St.) \\
+Two-point ($\mu=0.25$) & $K=12$ ($T=1024$) & Howard Stitched EB & 1.000 & 0.1472 & 0.0611 & 1.32 \\
+Two-point ($\mu=0.25$) & $K=12$ ($T=1024$) & Howard Gamma-Exp.\ EB & 0.999 [0.994, 1.000] & 0.1115 & 0.0510 & 1.00 (ref.) \\
+Two-point ($\mu=0.25$) & $K=12$ ($T=1024$) & \textbf{WSR aGRAPA Betting} & 1.000 [0.982, 1.000] & \textbf{0.0896} & \textbf{0.0466} & \textbf{0.80} (0.61 vs.\ St.) \\
+Near-boundary ($\mu=0.02$) & $K=1$ ($T=2048$) & Howard Stitched EB & 1.000 & 0.0392 & 0.0073 & 2.10 \\
+Near-boundary ($\mu=0.02$) & $K=1$ ($T=2048$) & Howard Gamma-Exp.\ EB & 1.000 [0.996, 1.000] & 0.0187 & 0.0027 & 1.00 (ref.) \\
+Near-boundary ($\mu=0.02$) & $K=1$ ($T=2048$) & \textbf{WSR aGRAPA Betting} & 1.000 [0.982, 1.000] & \textbf{0.0145} & \textbf{0.0029} & \textbf{0.78} (0.37 vs.\ St.) \\
+Near-boundary ($\mu=0.02$) & $K=12$ ($T=1024$) & Howard Stitched EB & 1.000 & 0.0514 & 0.0203 & 2.13 \\
+Near-boundary ($\mu=0.02$) & $K=12$ ($T=1024$) & Howard Gamma-Exp.\ EB & 1.000 [0.996, 1.000] & 0.0241 & 0.0075 & 1.00 (ref.) \\
+Near-boundary ($\mu=0.02$) & $K=12$ ($T=1024$) & \textbf{WSR aGRAPA Betting} & 1.000 [0.982, 1.000] & \textbf{0.0213} & \textbf{0.0075} & \textbf{0.88} (0.41 vs.\ St.) \\
+\bottomrule
+\end{tabular}
+\end{table*}

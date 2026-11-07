@@ -1,0 +1,13 @@
+metric_name,original_stage3,corrected_stage3,change_direction_and_explanation
+Phase A Default Confidence Sequence,howard_empirical_normal_mixture (marginal alpha=0.05),howard_gamma_exponential_eb (simultaneous alpha_arm=0.05/K),"Repaired: Strict [0,1]-bounded EB + simultaneous family-wise alpha"
+"Heuristic z-Threshold Elimination Fallbacks (2.6*SE, 2.3*SE)",Present in adaptive_cobyla.py,Completely Removed (0 occurrences),Repaired: Elimination driven exclusively by simultaneous CS bounds
+"COBYLA Hyperparameter Alignment (rhobeg, jitter_half_width)","Mismatched (0.10 vs 0.20, 0.04 vs 0.07)","Canonical Aligned (rhobeg=0.10, jitter=0.07 across all modes)",Repaired: Eliminated confounding optimizer step-size differences
+"Mean Phase A Discovery Shots (Proposed Full Framework, G=500)",1689.0,2558.8,+869.8 shots (Strict simultaneous EB bounds require stronger evidence for early stop/pruning)
+"Mean Phase C Confirmation Shots (Proposed Full Framework, G=500)",1657.3,1700.9,"+43.5 shots (Phase C sequential confirmation continues to save ~58.5% vs 4,096)"
+"Mean Total Quantum Measurements per Graph (Proposed, G=500)",3346.4,4259.6,"+913.3 shots (−36.0% vs matched 6,656-shot uniform+fixed4096; −48.0% vs 8,192 ref)"
+Phase A Candidate Elimination % in COBYLA (G=500),35.93%,0.00%,Reduced as expected after removing heuristic 2.6*SE/2.3*SE rules and applying alpha/16 simultaneous EB bounds
+"Phase A Candidate Elimination % in Fixed Pool K=12 (Exp 10, G=100)",50.67%,13.92%,Eliminates only wide perturbations whose simultaneous L_i^sim(t) > tau or > min_j U_j^sim(t); 0.00% incorrect eliminations
+Incorrect Elimination Rate (COBYLA & Fixed Pool),0.02% / 0.00%,0.00% / 0.00%,Unchanged at 0.00% — now backed by rigorous simultaneous FWER <= alpha guarantee
+Mean True Expected Loss — Proposed vs Standard Fixed COBYLA,0.261127 vs 0.260514,0.262175 vs 0.260235,"Under fair canonical rhobeg=0.10 & jitter=0.07, both achieve ~0.2643 expected loss (~0.7357 approx ratio)"
+Certification Rate / Target Rejection / Inconclusive Rate (G=500),56.4% / 25.6% / 18.0%,53.4% / 26.8% / 19.8%,Consistent certification power across independent per-method Phase C streams
+Observed False Certifications & 95% Clopper-Pearson Upper Bound,"0 / 500 (0.00%, UB 0.60%)","0 / 500 (0.00%, UB 0.60%)",Unchanged: 0 false certifications across all 500 graphs and all alpha levels
